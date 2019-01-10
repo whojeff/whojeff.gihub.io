@@ -8,7 +8,7 @@
   
   
   
-  <title>Whojeff</title>
+  <title>关于 | Whojeff</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -164,63 +164,93 @@
 </script>
 
       
-<div class="container home-index">
+
+
+
+
+
+
+
+
+<div class="container post-index">
+
   
-  <div class="post">
-    <h1 class="article-title">
-      <a href="/2019/01/10/hello-world/">
-        <span>Hello World</span>
-      </a>
-    </h1>
-    <!-- PC端文章信息 -->
-    <div class="article-top-meta pc-view">
-      <span>
-        发布时间 : 2019-01-10
-      </span>
-    </div>
-    <!-- 移动端文章信息 -->
-    <div class="article-top-meta mobile-view">
-      <span>
-        发布 : 2019-01-10
-      </span>
-      
-      
-        <span>
-          浏览 : <span class="article-timer" data-identity="hello-world"></span>
-        </span>
-      
-    </div>
+
+<div class="post">
+  <h1 class="article-title">
+    <span>about</span>
+  </h1>
+  <div class="article-top-meta">
+    <span>
+      发布 : 
+      2019-01-10
+    </span>
     
-    <!-- 文章简介 -->
-    <div class="article-content">
-      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
-        
-      </div>
-    </div>
-    <div class="article-footer">
-      <div class="article-meta pull-left">
-        <!-- 分类pc端可见 -->
-        <span class="pc-view">
-          
-        <span>
-                    
-        </span>
-      </span></div>
-      
-        <div class="article-meta pull-right">
-          <span class="pc-view">
-            <i class="iconfont icon-view"></i>浏览: <span class="article-timer" data-identity="hello-world"></span>
-          </span>
-        </div>
+    
+      <span>
+        浏览 : <span class="article-timer" data-identity="about"></span>
+      </span>
+    
+  </div>
+
+  
+
+  <div class="article-content">
+    <div class="markdown-body">
       
     </div>
   </div>
   
+  
+  
 
-  <nav class="page-navigation">
+  
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+      <span>
+        
+      </span>
+    </div>
+    <div class="article-meta pull-right">
+    </div>
+  </div>
+</div>
+
+
+  <aside id="sidebar">
+    <p id="sidebar-header"></p>
+    <ol id="sidebar-toc"></ol>
+  </aside>
+  <script async>setTimeout(generateToc, 10);</script>
+
+
+  <nav class="post-navigation">
     
     
   </nav>
+
+  
+    <a href="#comment" class="comment-anchor"></a>
+<div class="comment-title"><i class="iconfont icon-footprint"></i> 留下足迹 <i class="iconfont icon-footprint"></i></div>
+<div id="vcomments"></div>
+
+<script defer>
+  if( true ) {
+    let path = getRealPath()
+    new Valine({
+      el: "#vcomments",
+      appId: "lrNtC9Gjzu7WMhwNB8LUPA2R-gzGzoHsz",
+      appKey: "YvGlx6IfzRlmmDl4M8nuWdYt",
+      notify: false,
+      verify: false,
+      avatar: "robohash",
+      placeholder: "正确填写邮箱, 才能及时收到回复哦♪(^∇^*)",
+      path
+    });
+  }
+</script>
+   
 
   
     <script defer>
@@ -350,6 +380,7 @@ if(true){
 }
 </script>
    
+
 </div>
 
 
