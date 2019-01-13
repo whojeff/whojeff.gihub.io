@@ -8,7 +8,7 @@
   
   
   
-  <title>关于我 | Whojeff</title>
+  <title>分类: 生活 | Whojeff</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -163,227 +163,45 @@
   })
 </script>
 
-      
-
-
-
-
-
-
-
-
-<div class="container post-index">
-
-  
-
-<div class="post">
-  <h1 class="article-title">
-    <span>关于我</span>
-  </h1>
-  <div class="article-top-meta">
-    <span>
-      发布 : 
-      2019-01-10
-    </span>
+      <div class="container">
+  <div class="timeline">
+  <span class="archive-move-on"></span>
+  <span class="archive-page-counter">
     
+      <span>当前位于 1/1 页</span>
     
-      <span>
-        浏览 : <span class="article-timer" data-identity="about"></span>
-      </span>
-    
-  </div>
-
-  
-
-  <div class="article-content">
-    <div class="markdown-body">
-      <h1 id="我是谁？我在哪？"><a href="#我是谁？我在哪？" class="headerlink" title="我是谁？我在哪？"></a>我是谁？我在哪？</h1><p>&ensp;&ensp;不知名渗透测试工程师，啥都不会，混吃混喝等死的那种！没啥爱好，就喜欢坐在电脑前，啥也不干，啥也不想。</p>
-
-    </div>
-  </div>
+  </span>
   
   
-  
-
-  
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-      <span>
+    <div class="collection-title">
+      <h2>
         
-      </span>
+          <span>分类 : 生活</span>
+        
+      </h2>
     </div>
-    <div class="article-meta pull-right">
-    </div>
-  </div>
+  
+  
+  
+  <article class="posts-collapse">
+    <header>
+      <h2>
+        <a href="/2019/01/13/黑客是场电子梦/">
+          <span>黑客是场电子梦</span>
+        </a>
+      </h2>
+      <div class="post-meta">
+        01-13
+      </div>
+    </header>
+  </article>
+  
 </div>
-
-
-  <aside id="sidebar">
-    <p id="sidebar-header"></p>
-    <ol id="sidebar-toc"></ol>
-  </aside>
-  <script async>setTimeout(generateToc, 10);</script>
-
-
-  <nav class="post-navigation">
+  <nav class="page-navigation">
     
     
   </nav>
-
-  
-    <a href="#comment" class="comment-anchor"></a>
-<div class="comment-title"><i class="iconfont icon-footprint"></i> 留下足迹 <i class="iconfont icon-footprint"></i></div>
-<div id="vcomments"></div>
-
-<script defer>
-  if( true ) {
-    let path = getRealPath()
-    new Valine({
-      el: "#vcomments",
-      appId: "lrNtC9Gjzu7WMhwNB8LUPA2R-gzGzoHsz",
-      appKey: "YvGlx6IfzRlmmDl4M8nuWdYt",
-      notify: false,
-      verify: false,
-      avatar: "robohash",
-      placeholder: "正确填写邮箱, 才能及时收到回复哦♪(^∇^*)",
-      path
-    });
-  }
-</script>
-   
-
-  
-    <script defer>
-const valineAPI = (() => {
-  try {
-    AV.init("lrNtC9Gjzu7WMhwNB8LUPA2R-gzGzoHsz", "YvGlx6IfzRlmmDl4M8nuWdYt");
-  } catch(error) {}
-  const isExist = (identity) => {
-    identity = identity || getRealPath();
-    let query = new AV.Query('Timer');
-    return new Promise((resolve, reject) => {
-      query.equalTo("identity", identity);
-      query.find().then(results => {
-        resolve(results.length > 0);
-      }, error => reject(error));
-    })
-  }
-
-  const _get = (identity) => {
-    let query = null;
-    if(identity && identity instanceof Array){
-      let querys = [];
-      for(let i = 0; i < identity.length; ++i) {
-        querys[i] = new AV.Query('Timer');
-        querys[i].equalTo('identity', identity[i]);
-      }
-      query = AV.Query.or.apply(null ,querys);
-    } else {
-      identity = identity || getRealPath();
-      query = new AV.Query("Timer");
-      query.equalTo("identity", identity);
-    }
-
-    return new Promise((resolve, reject) => {
-      query.find()
-      .then(results => resolve(results))
-      .catch(error => reject(error))
-    })
-  }
-
-  const create = (identity) => {
-    identity = identity || getRealPath();
-    return new Promise((resolve, reject) => {
-      let Todo = AV.Object.extend('Timer');
-      let todo = new Todo();
-      todo.set("times", 1);
-      todo.set("identity", identity);
-      todo.save().then(res => resolve(true), error => reject(error));
-    })
-  }
-
-  const update = (identity) => {
-    identity = identity || getRealPath();
-    return new Promise((resolve, reject) => {
-      let query = new AV.Query('Timer');
-      query.equalTo("identity", identity);
-      query.find().then(todos => {
-        todos.forEach(todo => {
-          todo.set("times", todo.attributes.times + 1);
-        });
-        return AV.Object.saveAll(todos);
-      }).then(todos => resolve(true), error => reject(error));
-    })
-  }
-
-  return {
-    isExist,
-    _get,
-    update,
-    create
-  }
-})()
-
-const calcAndWriteTimes = () => {
-  let isPost = false;
-
-  let timerAllDOM = document.querySelectorAll(".article-timer");
-
-  if(isPost) {
-    let identity = timerAllDOM[0].getAttribute("data-identity");
-    valineAPI.isExist(identity)
-    .then(exist => {
-      if(exist) {
-        return valineAPI.update(identity);
-      }
-      return new Promise(resolve => resolve(true));
-    })
-    .then( succuess => valineAPI._get(identity))
-    .then( result => timerAllDOM[0].innerText = result[0].attributes.times)
-    .catch(error => console.log(error.message))
-    return ;
-  }
-
-  let timerDOMCache = {};
-
-  for(let timerDOM of timerAllDOM) {
-    let identity = timerDOM.getAttribute("data-identity");
-    if(timerDOMCache.hasOwnProperty(identity)){
-      timerDOMCache[identity].dom.push(timerDOM);
-    }else{
-      timerDOMCache[identity] = {
-        dom: [timerDOM],
-        times: undefined
-      };
-    }
-  }
-
-  let identities = Object.keys(timerDOMCache);
-  valineAPI._get(identities).then(results => {
-    for(let result of results) {
-      let {identity, times} = result.attributes;
-      timerDOMCache[identity].times = times;
-      timerDOMCache[identity].dom.map(item => item.innerText = times);
-    }
-    for(let identity of identities) {
-      if(timerDOMCache[identity].times){
-        continue;
-      }
-      timerDOMCache[identity].dom.map(item => item.innerText = 1);
-      valineAPI.create(identity);
-    }
-  }).catch(error => console.log(error.message))
-}
-
-if(true){
-  calcAndWriteTimes();
-}
-</script>
-   
-
 </div>
-
 
       <footer>
   <p class="site-info">

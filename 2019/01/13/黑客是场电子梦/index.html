@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+  
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta name="author" content="董沅鑫, yuanxin.me@gmail.com">
+  
+  
+  
+  <title>黑客是场电子梦 | Whojeff</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="生活,Monyer,">
+  
+
+  <script>
+    console.log('\n%c Hexo-theme-bmw v4.0 ' + '%c 🎉 https://github.com/dongyuanxin/theme-bmw 🎉\n' + '\n%c View demo online ' + '%c 🔍 https://godbmw.com/ 🔍  \n' , 'color: #fadfa3; background: #030307; padding:3px 0;', '', 'color: #fadfa3; background: #030307; padding:3px 0;', '');
+  </script>
+
+  
+    <meta name="description" content="Learn | Think | Break">
+  
+
+  
+
+  
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/touch-icon.png">
+  
+
+  <link href="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/icon/iconfont.css">
+<link rel="stylesheet" href="/css/github-markdown.css">
+<link rel="stylesheet" href="/css/highlight.css">
+
+  <script src="/js/util.js"></script>
+<script src="/js/valine.min.js"></script>
+
+  
+    <link rel="stylesheet" href="/custom/style.css">
+  
+
+  
+    <link href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js" async></script>
+  
+
+  
+  
+  <script src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js" async></script>
+  
+  
+    <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.11.0/dist/av-min.js"></script>
+  
+
+</head>
+
+  <body>
+
+    
+
+    <div id="app">
+
+      <div class="header-wrap">
+  <header>
+    <div class="site-brand">
+      <div class="site-title">
+        <a href="/">Learn | Think | Break</a>
+      </div>
+    </div>
+    <nav class="site-navigation">
+      <ul class="nav-menu">
+      
+        <li class="nav-item" data-path="/">
+          
+            <a href="/" target="_self">
+              主页
+            </a>
+          
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          
+            <a href="/archives/" target="_self">
+              归档
+            </a>
+          
+        </li>
+      
+        <li class="nav-item" data-path="/categories/">
+          
+            <a href="/categories/" target="_self">
+              分类
+            </a>
+          
+        </li>
+      
+        <li class="nav-item" data-path="/tags/">
+          
+            <a href="/tags/" target="_self">
+              标签
+            </a>
+          
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          
+            <a href="/about/" target="_self">
+              关于
+            </a>
+          
+        </li>
+      
+        <li class="nav-item" data-path="">
+          
+            <a href="/" target="_self">
+              
+            </a>
+          
+        </li>
+      
+      </ul>
+    </nav>
+    <i class="iconfont icon-menu"></i>
+  </header>
+</div>
+
+<script>
+  let links = document.querySelectorAll('.nav-item');
+  for(let link of links){
+    let childrenLink = link.querySelector('ul');
+    link.addEventListener('mouseenter', () => {
+      if(childrenLink) {
+        childrenLink.className = "nav-menu--dropdown active";
+      }
+    })
+    link.addEventListener('mouseleave', () => {
+      if(childrenLink) {
+        childrenLink.className = "nav-menu--dropdown";
+      }
+    })
+  }
+  let rootRealPath = getRealPath(window.location.pathname, true);
+  for(let link of links) {
+    let linkPath = link.getAttribute("data-path");
+    if(linkPath && getRealPath(linkPath, true) === rootRealPath) {
+      link.className = "nav-item hover";
+    }
+  }
+
+  let iconMenu = document.querySelector("i.iconfont.icon-menu"),
+    iconMenuClicked = false;
+  let navDOM = document.querySelector("nav.site-navigation");
+  iconMenu.addEventListener("click", () => {
+    iconMenuClicked 
+      ? navDOM.className = "site-navigation active"
+      : navDOM.className = "site-navigation";
+    iconMenuClicked = !iconMenuClicked;
+  })
+</script>
+
+      
+
+
+
+
+
+
+
+
+<div class="container post-index">
+
+  
+
+<div class="post">
+  <h1 class="article-title">
+    <span>黑客是场电子梦</span>
+  </h1>
+  <div class="article-top-meta">
+    <span>
+      发布 : 
+      2019-01-13
+    </span>
+    
+      <span>
+        分类 : 
+          <a href="/categories/生活/">
+            生活
+          </a>
+      </span>
+    
+    
+      <span>
+        浏览 : <span class="article-timer" data-identity="黑客是场电子梦"></span>
+      </span>
+    
+  </div>
+
+  
+
+  <div class="article-content">
+    <div class="markdown-body">
+      <br>回想起来，我从高中时期02年左右开始接触学习网络安全，到大学时期06年博客流行时成为网络安全活跃分子，再到11年进入某部门的网络沉寂期，再到18年离开后再次的不安分，可算得上是一段跌宕起伏的岁月了。<p></p>
+<p>很多人说：“网络会记住你一辈子！”。</p>
+<p>我以一个过来人的经验告诉你：不会的！网络有着它的记忆时限。</p>
+<p>除非你能不断去刷新它的记忆，或者你成为乔布斯一般的传奇或经典，否则总有一天网络会将你忘记。</p>
+<p>如果在11年左右，你到百度去搜索：Monyer，你能获得到几百万搜索结果。在有意地沉寂6、7年后，现在估计充其量几万条了吧！</p>
+<p>有很多网络安全老人儿可能还记得那个monyer’s game（<a href="http://monyer.com/game/game1/" target="_blank" rel="noopener">http://monyer.com/game/game1/</a> ）。那上面长长的通关列表见证了中国网络黑客的进步和成长，也见证了中国网络安全的快速发展。里面有一些熟悉的ID现如今要么是各个互联网大公司的顶梁柱大佬，要么自己创办了网络安全公司成为了老板。有些人依然奋斗在技术的前沿，有些人已经转型创业或做了管理。</p>
+<p>时代变迁，白驹过隙。社会在发展、网络在发展、人也在进步和发展，而这个速度实在是太快了。我在07年做monyer’s game时从来没想到，未来这种模式其实可以做成比赛，做成平台，甚至一个公司能靠此达到上市的地步；与08年我和余弦创建XEYE团队时相比，今天的网络安全团队朝着更专业化、更职能化、更商业化来运作；CTF、AWD、PWN2OWN当年只是一种业余的消遣，如今也可以成为一种职业。</p>
+<p>近期又见有很多新的小伙伴儿问询：如何才能成为一名黑客？</p>
+<p>事实上这个问题从我06年有博客以来就从来没有断过。我几乎很少去给人正面回复。因为说实话，黑客是一个很模糊很笼统的概念，会破解软件算不算黑客？会渗透技术算不算黑客？会挖掘二进制漏洞算不算黑客？广义来看，肯定都算。那怎么来学？各有各的学法。</p>
+<p>如果把黑客作为一个兴趣爱好，我是非常赞同的。入门其实也不一定需要大师指引，学会用好百度、谷歌，去搜索“黑客技术入门”，简直是一搜一大把。但如果想把网络安全作为一个终身职业，那么可能就需要想清楚了：你是否愿意把你终身都投入到网络技术的事业上？如果只是因为看到了目前网络安全的热门，或者只是对网络攻防技术心血来潮，那么我建议要充分想好、调研好再做决定。</p>
+<p>有句俗话讲：女怕嫁错郎，男怕入错行。其实网络安全并不是一个理想的行当，甚至相对于一些传统行业而言是一个相对糟糕的行当。一方面，一个人能力强否并不取决于他所接受的教育程度，身边学医、学广告、学化学出身的黑客比比皆是；另一方面一个不能孜孜不倦，始终处于新知识、新技术学习状态下的安全爱好者，必然会被超越和取代。</p>
+<p>如果你找补习老师，一个是有着20年教龄的老教师，另外一个是20岁刚毕业的新老师，你会选哪一个？</p>
+<p>如果你去医院挂号，一个是有着20年工作经验的老专家，另外一个是20岁刚毕业的小伙子，你会挂哪一个？</p>
+<p>如果你找木匠做工，一个是有着20年工作经验的老木匠，一个是刚出徒的年轻人，你认为谁的手艺更高超？</p>
+<p>我认为在薪酬一样的情况下，大多数人都会选择老教师、老医生、老木匠。因为老则意味着经验丰富。（如果你都选择年轻的，也不必太在意，你一定与众不同）</p>
+<p>那么同样类比过来，如果我们选择IT人才，一个是有着20年编程经验的老码农，另一个是有2年编程经验的新人，那么应该选择哪一个呢？</p>
+<p>我不知道别人怎样抉择，若是我去选择，在他们同样满足招聘条件，展现相似技术能力的情况下，我会优先选择年轻人。原因就是2年工作经验的人会有更大的技术上升空间，有更高的活力，而单纯的20年的编程经验可能未必会强于2年编程经验。</p>
+<p>为什么会出现20年的技术经验赶不上2年技术经验的情况？最主要的原因还是互联网以及IT技术的发展和迭代速度太快了。20年前，估计大部分程序员汇编都玩的很溜，一些凤毛麟角的网站还是用C或Perl开发的；20年后的今天，纯C开发都没那么多了，但python、go等语言大行其道。此外还有一个原因是网络技术开始分化，并且这些年技术分化和派生的越来越厉害了。</p>
+<p>记得前些日子跟人聊天谈到：这些年随着网络技术的发展，最先淘汰的是哪一拨人？我半开玩笑的说：应该是学Flash的人吧！因为随着ES6、CSS3、HTML5的发展，WEB展示的进化，iOS的不兼容，Chrome对Flash的逐步冷漠，一名有着10年或20年Flash制作经验的工程师很有可能会面临失业的风险，而他掌握的ActionScript也很可能不再有任何用武之地。</p>
+<p>拿我个人为例，我除了研究网络安全以外，其实还是一个“全栈”的开发程序猿。仅拿前端举例：十多年前，HTML、JS、CSS我就玩的很溜了。之后流行web2.0我也与时俱进研究Ajax、研究响应式布局，出现jquery、bootstrap各种新潮流我亦步亦趋。然后开始出现HTML5、ES5、ES6、CSS3、TypeScript、CoffeScript、less、sass、webpack、angular、react、jsx、vue……因为我不是专业前端，后来有些技术我就选择性不跟了。我不知道目前的全职前端工程师如何，但是一定有一大群人依然时刻在跟进技术前进的脚步，甚至在带领技术的发展，那么在这方面他们一定是强于我的。</p>
+<p>在这些新知识的学习上老手并不比新手有太大的优势。你会jquery，跟你在学习angular上不会带来任何的便利。一个会css2的人和一个会css3的人在学习less上的时间也不会相差太多。而若开发一个项目，仅会css，跟先学会less，之后再应用的程序员相比，也不会慢太多。但新人总是会率先学习新的东西，而刨除之前的学习成本，显然工作效率上就会有所提高。而会一大堆老技术的人，却又不表现在新技术学习上的优势，反而由于固有的技术思维，老技术则有可能变成累赘。</p>
+<p>网络安全上同样存在这个问题，像我当年也是加密破解、二进制漏洞挖掘利用、入侵渗透通吃的。缓冲区溢出也能简单玩一玩，然而在DEP、SEHOP、ASLR等一些防护技术普及后，又没有精力照顾这些，这块的技术积累上早已被时代远远地抛到了后面。现如今，一名黑客且不说通吃所有网络安全技术，甚至我看连WEB渗透和内网渗透都划分成了两个方向，同时精通的人都不多。</p>
+<p>随着无线技术、移动系统、IoT、工控互联网、云计算、大数据、AI……一大堆新技术的出现，其实带来了一大堆新的安全问题。这些安全问题既有共通性，又有独特性。然而随着一大堆安全方案的产生，漏洞要么被挖掘了出来，要么隐藏得更深。再想挖掘漏洞，要么靠浸淫，要么靠运气。吴瀚清也说过：前端越来越猥琐，底层越来越变态。研究无线安全的人可能不会再有精力研究iOS或android系统的漏洞，研究渗透技术的人可能也没有精力再去研究逆向工程……这是技术分化的必然结果。在10年前，有很多“全栈”的黑客；现在不是说没有，但肯定已经不多了。再下去，可能研究智能汽车安全的人仅研究这一点就可以研究一辈子。</p>
+<p>泛而不精的人在网络安全技术分化的形势下会面临很大劣势，而选错方向的人同样不容乐观。在06年、07年读过我博客的人会知道我在XSS上是十分精通的，Gmail、YahooMail的洞也不是没挖过。然而随着安全技术解决方案和防护能力的提升，Chrome基本上把一半的XSS给咔嚓掉了，CSP又咔嚓掉了另一半，使得外链脚本几无执行可能，同时一些规则的限制使得即便插入了脚步也执行不了。虽然现在XSS还是很有市场，但照比10年前已经是巨大的萎缩了，可能再过10年就将成为一项边缘化的技术。</p>
+<p>我最近研究谷歌的BeyondCorp也很受感触，这是一个力争终结企业内网的网络安全架构。如果内网都没有了，那么内网渗透技术还有存在的必要么（当然这是指未来，现在大可不必杞人忧天）？这种安全架构要达到普及可能还需要10到20年或更久的时间，但也有可能像Chrome、Android、云WAF等产品或技术一样以更短的时间占领市场，你看今年ISC大会的主题就已经是零信任架构了。</p>
+<p>前两天跟人聊起技术人员的发展路线，我总结了几个阶段：技术输出阶段、经验输出阶段、思路输出阶段和决策输出阶段。可以分别对标技术人员、团队Leader、部门技术经理和公司技术总监或CTO。这不是所有人都适合的发展路线，因为不是所有的人都能够在技术工作中总结经验并形成输出，更不会有太多人能够掌握市场、分析形势、预测动向形成新思路，而能正确作出决策的人更是寥寥无几。如果有相关的能力，能一步步往上走固然是好事；但如果由于主观或客观原因，没办法走到下一阶段，那么就要时刻学习、学习、再学习，不断研究、研究、再研究，掌握自身在技术上的领先优势，保持对新兴技术的把控能力，才能够不被新人所淘汰。</p>
+<p>前两天一个老同学打电话过来，跟我述说“中年危机”：说已经在公司做了近十年，感觉很有危机感，很迷茫，有再择业的想法。我帮他深入分析了下发现，技术输出上他已比不过新来公司的年轻人，而又没有经验输出的能力，这导致了他在工作上必然有很大危机。然而若是一切都是自身原因造成的，再择业可能问题会更大。而这一切都是由于技术分化和派生造成的，他没进步，技术在进步，别人在进步，所以就有被淘汰的危机。“熟读唐诗三百首，不会作诗也会吟”这种通过反复熟练来成为专家的路数在IT技术行业上不会出现。在IT技术行业如果没有每天在进步，那么就是退步，那么就是被后浪拍在沙滩上的前浪。</p>
+<p>有很多在校的大学生及网络安全爱好者想学习网络安全、黑客技术，那么请先询问自己的内心：你要学习的目的是什么，爱好还是就业？你是否要把这当作你未来的职业？你是否有毅力始终学习、进步不被淘汰？是否有能力持续性地做高效率技术输出，或达到技术输出的下一个阶段？如果是的，那么我建议你入坑，你能在学习、工作中体验到畅游互联网络、突破边界限制的刺激感；如果不是，那就仅把它当作一个业余爱好就好。</p>
+<p>对于那些已经工作了N年，看到网络安全蓬勃发展，想要再择业的人，同样要多问自己：你是因为什么对现有的工作失去的兴趣，是否会在未来网络安全的学习和工作上产生同样的问题？你要通过怎么样的学习追上其他人的脚步，尤其是年轻人的脚步，并且在工作中持续性具有领先的优势？虽然TK或黑哥都是弃医从黑的成功案例和业界典范，然而他们亦有着一个由兴趣爱好向安全职业化转换的过程，那么这种形式是否对自身受用？所有的问题都需要做好思考，给定答案，确定无误后，再义无反顾投入网络安全的大坑中。</p>
+<p>这个世界最刺激的事情莫过于脱离现状、摆脱束缚、迎接挑战，攀岩、跳伞、蹦极、竞技都可以达成这一目的，而网络黑客几乎能够满足这一切刺激的幻想，畅游网络、突破限制、斗智斗勇，这是最吸引人的地方。然而对于旅游的人来说，爬山是兴奋的；对于景区捡垃圾的人，爬山只是为了完成生计。当黑客成为了生计，则有可能不再一切尽如人意；此外由于目前网络安全市场的分工细化，可能最终给定你的职位未必是你当初想要的那个网络安全职位。</p>
+<p>黑客是场电子梦。我们这些老鸟在这场梦里畅游了十来年，也将继续畅游下去。然而作为安全爱好者的你是否已经准备好了入梦？又是否会将梦一直做下去呢……</p>
+<p>后记：本文大约成文于2018年的6月份，希望给那些希望成为网络安全从业者，甚至是IT技术从业者一个参考。当时还申请了公众号，励志要至少1个月一篇文章，到现在一年了，文章数量还是为0。仅以此文作为开篇吧，但现在不太敢保证什么，如果能一季度出一篇算高产，半年出一篇算幸运，一年出一篇就算达标了吧。感谢那些即便公众号文章数是0，但依然默默关注我的265人。</p>
+<p>原文地址：<a href="https://zhuanlan.zhihu.com/p/54714884" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/54714884</a></p>
+    </div>
+  </div>
+  
+  
+  
+
+  
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+      <span>
+        
+          <i class="iconfont icon-06tags"></i>标签: 
+          
+          <span class="span--tag">
+            <a href="/tags/Monyer/">
+              #Monyer
+            </a>
+          </span>
+          
+        
+      </span>
+    </div>
+    <div class="article-meta pull-right">
+    </div>
+  </div>
+</div>
+
+
+  <aside id="sidebar">
+    <p id="sidebar-header"></p>
+    <ol id="sidebar-toc"></ol>
+  </aside>
+  <script async>setTimeout(generateToc, 10);</script>
+
+
+  <nav class="post-navigation">
+    
+      <div class="nav-pre">
+        <i class="iconfont icon-prev"></i>
+        上一篇:
+        <a href="/2019/01/11/测试/" target="_self">测试</a>
+      </div>
+    
+    
+  </nav>
+
+  
+    <a href="#comment" class="comment-anchor"></a>
+<div class="comment-title"><i class="iconfont icon-footprint"></i> 留下足迹 <i class="iconfont icon-footprint"></i></div>
+<div id="vcomments"></div>
+
+<script defer>
+  if( true ) {
+    let path = getRealPath()
+    new Valine({
+      el: "#vcomments",
+      appId: "lrNtC9Gjzu7WMhwNB8LUPA2R-gzGzoHsz",
+      appKey: "YvGlx6IfzRlmmDl4M8nuWdYt",
+      notify: false,
+      verify: false,
+      avatar: "robohash",
+      placeholder: "正确填写邮箱, 才能及时收到回复哦♪(^∇^*)",
+      path
+    });
+  }
+</script>
+   
+
+  
+    <script defer>
+const valineAPI = (() => {
+  try {
+    AV.init("lrNtC9Gjzu7WMhwNB8LUPA2R-gzGzoHsz", "YvGlx6IfzRlmmDl4M8nuWdYt");
+  } catch(error) {}
+  const isExist = (identity) => {
+    identity = identity || getRealPath();
+    let query = new AV.Query('Timer');
+    return new Promise((resolve, reject) => {
+      query.equalTo("identity", identity);
+      query.find().then(results => {
+        resolve(results.length > 0);
+      }, error => reject(error));
+    })
+  }
+
+  const _get = (identity) => {
+    let query = null;
+    if(identity && identity instanceof Array){
+      let querys = [];
+      for(let i = 0; i < identity.length; ++i) {
+        querys[i] = new AV.Query('Timer');
+        querys[i].equalTo('identity', identity[i]);
+      }
+      query = AV.Query.or.apply(null ,querys);
+    } else {
+      identity = identity || getRealPath();
+      query = new AV.Query("Timer");
+      query.equalTo("identity", identity);
+    }
+
+    return new Promise((resolve, reject) => {
+      query.find()
+      .then(results => resolve(results))
+      .catch(error => reject(error))
+    })
+  }
+
+  const create = (identity) => {
+    identity = identity || getRealPath();
+    return new Promise((resolve, reject) => {
+      let Todo = AV.Object.extend('Timer');
+      let todo = new Todo();
+      todo.set("times", 1);
+      todo.set("identity", identity);
+      todo.save().then(res => resolve(true), error => reject(error));
+    })
+  }
+
+  const update = (identity) => {
+    identity = identity || getRealPath();
+    return new Promise((resolve, reject) => {
+      let query = new AV.Query('Timer');
+      query.equalTo("identity", identity);
+      query.find().then(todos => {
+        todos.forEach(todo => {
+          todo.set("times", todo.attributes.times + 1);
+        });
+        return AV.Object.saveAll(todos);
+      }).then(todos => resolve(true), error => reject(error));
+    })
+  }
+
+  return {
+    isExist,
+    _get,
+    update,
+    create
+  }
+})()
+
+const calcAndWriteTimes = () => {
+  let isPost = true;
+
+  let timerAllDOM = document.querySelectorAll(".article-timer");
+
+  if(isPost) {
+    let identity = timerAllDOM[0].getAttribute("data-identity");
+    valineAPI.isExist(identity)
+    .then(exist => {
+      if(exist) {
+        return valineAPI.update(identity);
+      }
+      return new Promise(resolve => resolve(true));
+    })
+    .then( succuess => valineAPI._get(identity))
+    .then( result => timerAllDOM[0].innerText = result[0].attributes.times)
+    .catch(error => console.log(error.message))
+    return ;
+  }
+
+  let timerDOMCache = {};
+
+  for(let timerDOM of timerAllDOM) {
+    let identity = timerDOM.getAttribute("data-identity");
+    if(timerDOMCache.hasOwnProperty(identity)){
+      timerDOMCache[identity].dom.push(timerDOM);
+    }else{
+      timerDOMCache[identity] = {
+        dom: [timerDOM],
+        times: undefined
+      };
+    }
+  }
+
+  let identities = Object.keys(timerDOMCache);
+  valineAPI._get(identities).then(results => {
+    for(let result of results) {
+      let {identity, times} = result.attributes;
+      timerDOMCache[identity].times = times;
+      timerDOMCache[identity].dom.map(item => item.innerText = times);
+    }
+    for(let identity of identities) {
+      if(timerDOMCache[identity].times){
+        continue;
+      }
+      timerDOMCache[identity].dom.map(item => item.innerText = 1);
+      valineAPI.create(identity);
+    }
+  }).catch(error => console.log(error.message))
+}
+
+if(true){
+  calcAndWriteTimes();
+}
+</script>
+   
+
+</div>
+
+
+      <footer>
+  <p class="site-info">
+    <br>
+    © 2019 | Whojeff
+    <br>
+    
+  </p>
+</footer>
+
+
+      <div class="back-to-top hidden">
+  <span>
+    <i class="iconfont icon-60"></i><span></span>%
+  </span>
+</div>
+
+<script>
+const updateIconToTop = percent => {
+  let dom = document.querySelector(".back-to-top span span");
+  dom.innerText = percent;
+  if(percent < 1) {
+    document.querySelector(".back-to-top").className = "back-to-top hidden";
+  } else {
+    document.querySelector(".back-to-top").className = "back-to-top";
+  }
+}
+
+const handleScoll = () => {
+  let isRunning = false;
+  return () => {
+    if (isRunning) return;
+    isRunning = true;
+    window.requestAnimationFrame(timestamp => {
+      let scrollTop =
+          document.documentElement.scrollTop || document.body.scrollTop,
+        scrollHeight =
+          document.documentElement.scrollHeight ||
+          document.body.scrollHeight,
+        clientHeight =
+          document.documentElement.clientHeight ||
+          document.body.clientHeight;
+      isRunning = false;
+      if (scrollTop <= 1) {
+        updateIconToTop(0);
+        return;
+      }
+      if (scrollTop + clientHeight >= scrollHeight) {
+        updateIconToTop(100);
+      } else {
+        updateIconToTop(parseInt(
+          100 * scrollTop / (scrollHeight - clientHeight),
+          10
+        ));
+      }
+    });
+  };
+}
+
+const backToTop = () => {
+  let scrollTop =
+      document.documentElement.scrollTop || document.body.scrollTop,
+    delay = 10,
+    time = 200;
+  if (scrollTop <= 20) {
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    return;
+  }
+  let step = Math.ceil(scrollTop * delay / time);
+  let timer = setInterval(() => {
+    scrollTop =
+      document.documentElement.scrollTop || document.body.scrollTop;
+    if (scrollTop - step <= 0) {
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+      clearInterval(timer);
+    } else {
+      document.documentElement.scrollTop = scrollTop - step;
+      document.body.scrollTop = scrollTop - step;
+    }
+  }, delay);
+}
+
+document.addEventListener("scroll", handleScoll(), false);
+
+document.querySelector(".back-to-top").addEventListener("click", backToTop, false);
+
+</script>
+
+    </div>
+
+    
+      <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+<script>
+  (() => {
+    const mathjaxConfig = {
+      showProcessingMessages: false, //关闭js加载过程信息
+      messageStyle: "none", //不显示信息
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [["$", "$"], ["\\(", "\\)"]], //行内公式选择符
+        displayMath: [["$$", "$$"], ["\\[", "\\]"]], //段内公式选择符
+        skipTags: ["script", "noscript", "style", "textarea", "pre", "code", "a"] //避开某些标签
+      },
+      "HTML-CSS": {
+        availableFonts: ["STIX", "TeX"], //可选字体
+        showMathMenu: false //关闭右击菜单显示
+      }
+    }
+
+    let mathjaxInterval = setInterval(() => {
+      if(!window.MathJax){
+        return;
+      }
+      window.MathJax.Hub.Config(mathjaxConfig)
+      window.MathJax.Hub.Queue(["Typeset", MathJax.Hub, document.getElementById('app')])
+
+      clearInterval(mathjaxInterval)
+    }, 10)    
+  })()
+</script>
+    
+
+    <script src="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.js" async></script>
+<script async>
+  let fancyTimer = setInterval(function(){
+    if(!window.$){
+      return;
+    }
+    $(document).ready(function() {
+      $(".post img").each(function () {
+        if($(this).parent().get(0).tagName.toLowerCase() === "a") {
+          return;
+        }
+        // $(this).attr("data-fancybox", "gallery"); // if you add 'data-fancybox', img will display after showed
+        var element = document.createElement("a");
+        $(element).attr("data-fancybox", "gallery");
+        $(element).attr("href", $(this).attr("src"));
+        $(this).wrap(element);
+      });
+      
+      clearInterval(fancyTimer);
+    });
+  }, 10);
+</script>
+
+    
+      
+         
+          <script src="/custom/script.js"  async  ></script>
+        
+      
+    
+  </body>
+
+</html>
