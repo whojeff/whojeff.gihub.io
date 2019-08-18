@@ -8,12 +8,12 @@
   
   
   
-  <title>测试 | Whojeff</title>
+  <title>自定义你的Malleable c2配置 | Whojeff</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="渗透测试,kali,tomcat,">
+    <meta name="keywords" content="cobaltstrike,">
   
 
   <script>
@@ -178,24 +178,17 @@
 
 <div class="post">
   <h1 class="article-title">
-    <span>测试</span>
+    <span>自定义你的Malleable c2配置</span>
   </h1>
   <div class="article-top-meta">
     <span>
       发布 : 
-      2019-01-11
+      2019-08-18
     </span>
     
-      <span>
-        分类 : 
-          <a href="/categories/渗透测试/">
-            渗透测试
-          </a>
-      </span>
-    
     
       <span>
-        浏览 : <span class="article-timer" data-identity="测试"></span>
+        浏览 : <span class="article-timer" data-identity="自定义你的Malleable c2配置"></span>
       </span>
     
   </div>
@@ -204,7 +197,16 @@
 
   <div class="article-content">
     <div class="markdown-body">
-      
+      <h1 id="为什么要自定义C2配置"><a href="#为什么要自定义C2配置" class="headerlink" title="为什么要自定义C2配置"></a>为什么要自定义C2配置</h1><p>cobaltstrike允许我们自定义c2配置以修改默认payload的行为，包括内存占用、回连时间、网络流量等。我们可以通过修改默认配置来修改payload的特征来达到躲避杀软检测。</p>
+<h1 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h1><p>这里的配置文件来自github，可以以此为模版进行修改，链接如下：</p>
+<p><a href="https://github.com/threatexpress/malleable-c2" target="_blank" rel="noopener">https://github.com/threatexpress/malleable-c2</a></p>
+<p>该配置文件旨在模拟jquery请求。</p>
+<h2 id="配置文件名称"><a href="#配置文件名称" class="headerlink" title="配置文件名称"></a>配置文件名称</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">################################################</span><br><span class="line">## Profile Name</span><br><span class="line">################################################</span><br><span class="line">## Description:</span><br><span class="line">##    The name of this profile (used in the Indicators of Compromise report)</span><br><span class="line">## Defaults:</span><br><span class="line">##    sample_name: My Profile</span><br><span class="line">## Guidelines:</span><br><span class="line">##    - Choose a name that you want in a report</span><br><span class="line">set sample_name &quot;jQuery Profile&quot;;</span><br></pre></td></tr></table></figure>
+<p>这里可以自定义配置文件名称，这个可以随便取一个，不会影响到payload的流量。</p>
+<h2 id="sleep-times"><a href="#sleep-times" class="headerlink" title="sleep times"></a>sleep times</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">set sleeptime &quot;60000&quot;;        # 1 Minute 默认时间</span><br><span class="line">#set sleeptime &quot;300000&quot;;       # 5 Minutes</span><br><span class="line">#set sleeptime &quot;6000000&quot;;      # 10 Minutes</span><br><span class="line">#set sleeptime &quot;9000000&quot;;      # 15 Minutes</span><br><span class="line">#set sleeptime &quot;1200000&quot;;      # 20 Minutes</span><br><span class="line">#set sleeptime &quot;1800000&quot;;      # 30 Minutes</span><br><span class="line">#set sleeptime &quot;3600000&quot;;      # 1 Hours</span><br><span class="line">set jitter    &quot;10&quot;;            # % jitter（抖动率），这里设置为10%，那么回连时间为54-66之间</span><br></pre></td></tr></table></figure>
+<p>这里可以修改回连时间。我们可以随时修改sleep time，比如我们在对目标进行操作的时候，为了使得执行命令时候结果显示 的更快，我们可以将时间改成3秒，如下图：</p>
+<p><a href="https://imgchr.com/i/mQK04U" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/08/18/mQK04U.png" alt="mQK04U.png"></a></p>
+
     </div>
   </div>
   
@@ -220,14 +222,8 @@
           <i class="iconfont icon-06tags"></i>标签: 
           
           <span class="span--tag">
-            <a href="/tags/kali/">
-              #kali
-            </a>
-          </span>
-          
-          <span class="span--tag">
-            <a href="/tags/tomcat/">
-              #tomcat
+            <a href="/tags/cobaltstrike/">
+              #cobaltstrike
             </a>
           </span>
           
@@ -252,15 +248,9 @@
       <div class="nav-pre">
         <i class="iconfont icon-prev"></i>
         上一篇:
-        <a href="/2019/01/10/hello-world/" target="_self">Hello World</a>
-      </div>
-    
-    
-      <div class="nav-next">
-        下一篇:
         <a href="/2019/01/13/黑客是场电子梦/" target="_self">黑客是场电子梦</a>
-        <i class="iconfont icon-next"></i>
       </div>
+    
     
   </nav>
 
