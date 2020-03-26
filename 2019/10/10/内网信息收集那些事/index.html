@@ -7,12 +7,12 @@
   
   
   
-  <title>关于我 | Whojeff</title>
+  <title>内网信息收集那些事 | Whojeff</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="Hexo, theme-bmw">
+    <meta name="keywords" content="内网渗透,">
   
 
   <script>
@@ -177,17 +177,17 @@
 
 <div class="post">
   <h1 class="article-title">
-    <span>关于我</span>
+    <span>内网信息收集那些事</span>
   </h1>
   <div class="article-top-meta">
     <span>
       发布 : 
-      2018-01-10
+      2019-10-10
     </span>
     
     
       <span>
-        浏览 : <span class="article-timer" data-identity="about"></span>
+        浏览 : <span class="article-timer" data-identity="内网信息收集那些事"></span>
       </span>
     
   </div>
@@ -196,8 +196,13 @@
 
   <div class="article-content">
     <div class="markdown-body">
-      <h1 id="我是谁？我在哪？"><a href="#我是谁？我在哪？" class="headerlink" title="我是谁？我在哪？"></a>我是谁？我在哪？</h1><p>&ensp;&ensp;不知名渗透测试工程师，啥都不会，混吃混喝等死的那种！没啥爱好，就喜欢坐在电脑前，啥也不干，啥也不想。</p>
-
+      <h1 id="判断是否是域环境"><a href="#判断是否是域环境" class="headerlink" title="判断是否是域环境"></a>判断是否是域环境</h1><p>通过net命令查看当前机器是否在域内：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">net view /domain 查询域列表</span><br><span class="line">net time /domain 从域控查询时间，若当前用户是域用户会从域控返回当前时间，亦用来判断主域，主域一般用做时间服务器</span><br><span class="line">net localgroup administrators 本机管理员【通常含有域用户】</span><br><span class="line">net user /domain 查询域用户（当前域）</span><br><span class="line">net group /domain 查询域工作组</span><br><span class="line">net group &quot;domain computers&quot; /domain 查看加入域的所有计算机名</span><br><span class="line">net &quot;domain admins&quot; /domain 查询域管理员用户组和域管用户</span><br><span class="line">net localgroup administrators /domain 查看域管理员</span><br><span class="line">net group &quot;domain controllers&quot; /domain 查看域控</span><br><span class="line">net accounts /domain 查看域密码策略</span><br></pre></td></tr></table></figure>
+<p>net命令的其他用途</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">net start 查看当前运行的服务</span><br><span class="line">net user 用户名 /domain 查看指定账户的详细信息</span><br></pre></td></tr></table></figure>
+<h1 id="定位域控"><a href="#定位域控" class="headerlink" title="定位域控"></a>定位域控</h1><p>知道了域控的主机名，但是还不知道域控的IP地址，接下来我们需要定位到域控的IP。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">nltest /dsgetdc:域名  定位域控IP</span><br><span class="line"></span><br><span class="line">nltest /dclist:域名   获取DC列表</span><br><span class="line">net group &quot;domain controllers&quot; /domain 查看域控</span><br><span class="line">利用上面两条命令获取的信息，然后去ping主机名即可获得DC的IP地址</span><br></pre></td></tr></table></figure>
+<h1 id="密码收集"><a href="#密码收集" class="headerlink" title="密码收集"></a>密码收集</h1>
     </div>
   </div>
   
@@ -209,6 +214,15 @@
   <div class="article-footer">
     <div class="article-meta pull-left">
       <span>
+        
+          <i class="iconfont icon-06tags"></i>标签: 
+          
+          <span class="span--tag">
+            <a href="/tags/内网渗透/">
+              #内网渗透
+            </a>
+          </span>
+          
         
       </span>
     </div>
@@ -227,6 +241,18 @@
 
   <nav class="post-navigation">
     
+      <div class="nav-pre">
+        <i class="iconfont icon-prev"></i>
+        上一篇:
+        <a href="/2019/09/16/如何轻松bypass-360/" target="_self">如何轻松bypass 360</a>
+      </div>
+    
+    
+      <div class="nav-next">
+        下一篇:
+        <a href="/2019/12/10/记一次失败的sql注入/" target="_self">记一次失败的sql注入</a>
+        <i class="iconfont icon-next"></i>
+      </div>
     
   </nav>
 
@@ -325,7 +351,7 @@ const valineAPI = (() => {
 })()
 
 const calcAndWriteTimes = () => {
-  let isPost = false;
+  let isPost = true;
 
   let timerAllDOM = document.querySelectorAll(".article-timer");
 
